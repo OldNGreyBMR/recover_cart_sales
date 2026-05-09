@@ -1,0 +1,7 @@
+# Other files and folders
+.settings/
+nppBackup/
+.dev-*
+*.zip
+*.bak
+*.php2
