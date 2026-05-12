@@ -1,7 +1,7 @@
-Recover Cart Sales (RCS) plugin for Zen Cart v1.5.8a to v2.2.2
-PHP 8.2 to PHP 8.4
-Version 4.2
-2026-05-09
+Recover Cart Sales (RCS) plugin for Zen Cart v2.1.0 to v2.2.2
+PHP 8.3 to PHP 8.5
+Version 4.2.1 Encapsulated only
+2026-05-12
 =============
 DESCRIPTION:
 =============
@@ -16,27 +16,19 @@ Compose your email message carefully. Don't burden your customers with undesirab
 The idea here is to "recover" sales and reduce abandoned carts, not lose customers.
 
 =============
-FILES:
-=============
-/YOUR_admin/recover_cart_sales.php
-/YOUR_admin/stats_recover_cart_sales.php
-/YOUR_admin/includes/extra_datafiles/recover_cart_filenames.php
-/YOUR_admin/includes/functions/install_rcs.php
-/YOUR_admin/includes/languages/english/recover_cart_sales.php
-/YOUR_admin/includes/languages/english/stats_recover_cart_sales.php
-/YOUR_admin/includes/languages/english/extra_definitions/recover_cart.php
-
-=============
 INSTALL:
 =============
-1. Upload plugin files to your Zen Cart "admin" directory (however you have it named).
+1. Upload plugin files to your Zen Cart zc_plugins directory
 
 2. Now login to your Zen Cart admin.
 
-3. Three new menus should display in ZC admin:
+3. Run the installer from admin > Modules > Plugin Installer
+
+4. Three new menus should display in ZC admin:
    - Configuration > Configure RCS
    - Customers > Abandoned Carts
    - Reports > Recovered Sales Results
+   
    
 =============
 CONFIGURE:
@@ -108,11 +100,25 @@ HOW TO USE THE MOD:
     Note: Once an order arrives from customer cart listed on the abandoned cart list, the entry on the list 
           should be automatically cleared and then the customer's orders should automatically display on the RCS report.
     
-=============
+UPGRADING
+=========
+Installing the encapsulated version will delete all existing non-plugin directory files for Recover Cart Sales
+    FILES:
+    =============
+    /YOUR_admin/recover_cart_sales.php
+    /YOUR_admin/stats_recover_cart_sales.php
+    /YOUR_admin/includes/extra_datafiles/recover_cart_filenames.php
+    /YOUR_admin/includes/functions/install_rcs.php
+    /YOUR_admin/includes/languages/english/recover_cart_sales.php
+    /YOUR_admin/includes/languages/english/stats_recover_cart_sales.php
+    /YOUR_admin/includes/languages/english/extra_definitions/recover_cart.php
+    =============
+    The values in the config will remain and so will the scart table.
+    When the the encapsulated verson is uninstalled all database entries are removed including the scart table.
+    
 MAINTENANCE:
 =============   
-Occassionally flush out your "scart" db table (via phpmyadmin). Be sure to check your uncontacted/contacted list and 
-RCS report before flushing.
+Occassionally flush out your "scart" db table (via phpmyadmin). Be sure to check your uncontacted/contacted list and RCS report before flushing.
 
 ========================================
 COMMON KNOWN ISSUES:
@@ -126,7 +132,7 @@ COMMON KNOWN ISSUES:
 =================
 ZEN CART VERSION:
 =================
-Zen Cart v1.8a to v2.2.2 with PHP 8.2 to 8.5
+Zen Cart v2.1.0 to v2.2.2 with PHP 8.2 to 8.5
 (this mod version will not run on any previous version)
 
 =============
@@ -232,8 +238,6 @@ Later known v.2.12 updates released by Andrew (a_berezin):
 
 4.0.6 - 02/2022 - ThatSoftwareGuy - add specific template for email sends and specify module in zen_mail 
 
-4.2 - 2026-05-09 OldNGrey - international dates DATE_FORMAT_INTL (update lang.recover_cart.php in english/extra_definitions as well), customer ID appended to customer name for better identification where names are identical, maintain sort order by date added, reformatted code; updated lang file with new defines and updated HEADING_TITLE define to avoid conflict with other pages, change buttom images to css
+4.2 - 2026-05-09 OldNGrey - international dates DATE_FORMAT_INTL (update lang.recover_cart.php in english/extra_definitions as well), customer ID appended to customer name for better identification where names are identical, maintain sort order by date added, reformatted code; updated lang file with new defines, change buttom images to css
 
-
-Please donate to the Zen Cart team. www.zen-cart.com/donate - Thanks!
-
+4.2.1 2026-05-12 encapsulated
